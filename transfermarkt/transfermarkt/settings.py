@@ -21,6 +21,18 @@ USER_AGENT = 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_0 like Mac OS X) AppleWebKit
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
 
+FEED_EXPORT_FIELDS = [
+    'verein',
+    'richtung',
+    'spieler_name',
+    'spieler_id',
+    'spieler_url',
+    'marktwert',
+    'transfer_url',
+    'verein_transfer',
+    'abloese'
+]
+
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
 
@@ -36,7 +48,7 @@ ROBOTSTXT_OBEY = False
 #COOKIES_ENABLED = False
 
 # Disable Telnet Console (enabled by default)
-#TELNETCONSOLE_ENABLED = False
+TELNETCONSOLE_ENABLED = False
 
 # Override the default request headers:
 #DEFAULT_REQUEST_HEADERS = {
