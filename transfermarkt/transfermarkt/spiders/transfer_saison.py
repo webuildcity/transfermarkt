@@ -39,7 +39,7 @@ class TransferSaisonSpider(scrapy.Spider):
                     yield {
                         'richtung': richtung,
                         'spieler_name': spieler_name,
-                        'spieler_link': spieler_url,
+                        'spieler_url': spieler_url,
                         'spieler_id': spieler_id,
                         'marktwert': marktwert,
                         'abloese': abloese,
