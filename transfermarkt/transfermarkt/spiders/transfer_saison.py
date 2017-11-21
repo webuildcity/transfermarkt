@@ -5,7 +5,9 @@ import scrapy
 class TransferSaisonSpider(scrapy.Spider):
     name = 'transfer_saison'
     allowed_domains = ['https://www.transfermarkt.de']
-    start_urls = ['https://www.transfermarkt.de/1-bundesliga/transfers/wettbewerb/L1/plus/?saison_id=2015&s_w=&leihe=0&leihe=1&intern=0&intern=1']
+
+    def start_requests(self):
+        yield scrapy.Request('https://www.transfermarkt.de/1-bundesliga/transfers/wettbewerb/L1/plus/?saison_id={}&s_w=&leihe=0&leihe=1&intern=0&intern=1'.format(self.saison_id), self.parse)
 
     def parse(self, response):
         vereins_boxen =  response.css('div.box')
